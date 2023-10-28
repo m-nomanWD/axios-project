@@ -282,4 +282,19 @@ form h1 {
     justify-content: flex-start;
     align-items: flex-start;
   }
+  form {
+    width: 80vw;
+    margin: auto;
+  }
+  .app__dadJokes-container {
+    width: 80vw;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.25rem;
+    width: fit-content;
+  }
+  h2 {
+    font-size: 1rem;
+  }
 }
