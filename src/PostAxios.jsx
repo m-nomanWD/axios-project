@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import toast, { Toaster } from 'react-hot-toast'
 
 export default function PostAxios() {
   const url = 'https://course-api.com/axios-tutorial-post'
@@ -8,16 +9,32 @@ export default function PostAxios() {
   const handlSubmit = async (e) => {
     e.preventDefault()
     console.log(email, name)
-
+    var loadingToast
     try {
+      loadingToast = toast.loading('Submiting Data')
       const resp = await axios.post(url, { name, email })
-      console.log(resp.data)
+      console.log(resp)
+      setName('')
+      setEmail('')
+      if (resp.statusText === 'Created') {
+        toast.dismiss(loadingToast)
+        toast.success(
+          `User Created:
+        Name: ${resp.data.user.name}
+        Email: ${resp.data.user.email}`,
+          {
+            duration: 6000,
+          }
+        )
+      }
     } catch (error) {
-      console.log(error.response)
+      toast.dismiss(loadingToast)
+      toast.error(error.response.data.msg)
     }
   }
   return (
     <section>
+      <Toaster />
       <h1>Post Request </h1>
       <form action=''>
         <h2>Axios Form</h2>

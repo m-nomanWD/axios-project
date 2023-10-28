@@ -221,14 +221,57 @@ form h1 {
   nav {
     justify-items: flex-start;
   }
+  .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+  }
+  .toggle-container b {
+    margin: 0 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  .minus {
+    transform: scaleX(2);
+  }
+
   nav ul {
     flex-direction: column;
     padding: 0;
 
     align-items: flex-start;
+    width: 100%;
+    border-radius: 8px;
+    background-color: rgba(137, 43, 226, 0.1);
+    overflow: hidden;
+    box-sizing: border-box;
+
+    transition: 0.5s ease;
+  }
+  .show-list {
+    height: 250px;
+  }
+  .hide-list {
+    height: 0;
   }
   li {
     margin-top: 0.75rem;
+    margin: 0;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(137, 43, 226, 0.202);
+  }
+  li:hover {
+    border-bottom: 1px solid blueviolet;
+  }
+  .link {
     width: 100%;
   }
   .nav-center {

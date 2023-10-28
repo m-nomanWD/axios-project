@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Navbar() {
+  const [toggle, setToggle] = React.useState(false)
   return (
     <nav className='navbar-conatainer'>
       <div className='nav-center'>
@@ -9,8 +10,17 @@ export default function Navbar() {
           <span>
             Axios <b className='spacial'> Project</b>
           </span>
+          <div className='toggle-container'>
+            {toggle ? (
+              <b className='minus' onClick={() => setToggle(false)}>
+                -
+              </b>
+            ) : (
+              <b onClick={() => setToggle(true)}>+</b>
+            )}
+          </div>
         </div>
-        <ul>
+        <ul className={toggle ? 'show-list' : 'hide-list'}>
           <Link className='link' to='/'>
             <li>Get List</li>
           </Link>
@@ -27,7 +37,7 @@ export default function Navbar() {
             <li>Custom Instance</li>
           </Link>
           <Link className='link' to='/intersaptor'>
-            <li>InterSaptor</li>
+            <li>Interceptor</li>
           </Link>
         </ul>
       </div>
