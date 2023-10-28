@@ -217,6 +217,9 @@ form h1 {
 .code-container header span:first-child {
   color: #96cbda;
 }
+.toggle-container {
+  display: none;
+}
 @media screen and (max-width: 900px) {
   nav {
     justify-items: flex-start;
