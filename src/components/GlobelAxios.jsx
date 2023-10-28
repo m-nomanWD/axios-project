@@ -22,6 +22,14 @@ export default function GlobelAxios() {
   return (
     <div>
       <h1>Global Instance</h1>{' '}
+      <article>
+        <h2>Global Instances in Axios:</h2>
+        <p>
+          Global instances in Axios refer to the default Axios client or
+          instances created at the top level of your application. Key
+          characteristics of global instances include:
+        </p>
+      </article>
       <div className='code-container'>
         <header className='code-topbar'>
           <span>Code Promet </span> <span>globel.js</span>
@@ -36,6 +44,15 @@ axios.defaults.headers.common['Accept'] = 'application/json'
 `}
         </SyntaxHighlighter>
       </div>
+      <article>
+        <h2>Default Settings:</h2>
+        <p>
+          The global instance represents the default Axios client. It's
+          typically used for making requests that do not require specialized
+          configurations. Any settings applied to the global instance will
+          affect all requests made with it.
+        </p>
+      </article>
       <div className='code-container'>
         <header className='code-topbar'>
           <span>Code Promet </span> <span>function</span>

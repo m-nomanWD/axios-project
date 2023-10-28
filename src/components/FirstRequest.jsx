@@ -10,19 +10,19 @@ export default function FirstRequest() {
   }
   useEffect(() => {
     fetchData()
-  }, [data])
+  }, [])
   if (data.length === 0) {
     return <h1>Loading...</h1>
   } else {
     return (
       <main>
         <h1 style={{ textAlign: 'center' }}>Get Request </h1>
-        <section>
+        <section className='items-container'>
           {data.map((item) => {
             return (
               <div className='app__cardItem' key={item.id}>
                 <div className='img-container'>
-                  <img src={item.img} alt='' />
+                  <img src={item.image} alt='' />
                 </div>
                 <h2>
                   <b>Name: </b>

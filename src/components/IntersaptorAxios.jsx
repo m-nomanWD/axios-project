@@ -2,8 +2,9 @@ import React from 'react'
 import authFetch from '../axios/intersaptor'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
-
+import { promtCode, text } from '../data'
 export default function IntersaptorAxios() {
+  const { interceptText, requestText, responseText } = text
   const fetchInter = async () => {
     try {
       const resp1 = await authFetch('/react-store-products')
@@ -16,69 +17,56 @@ export default function IntersaptorAxios() {
   }, [])
   return (
     <div>
-      <h1>Intersaptor</h1>{' '}
+      <h1>Interceptors</h1>{' '}
+      <article>
+        <h2>{interceptText.title}</h2>
+        <p>{interceptText.info}</p>
+      </article>
+      <article>
+        <h2>{requestText.title}</h2>
+        <p>{requestText.info}</p>
+      </article>
       <div className='code-container'>
         <header className='code-topbar'>
-          <span>Code Promet </span> <span>interceptor.js</span>
+          <span>Code Promet </span>
+          <span>interceptor.js</span>
         </header>
         <SyntaxHighlighter
           className='code-prompt'
           language='javascript'
           style={atomDark}
         >
-          {` import axios from 'axios'
-const authFetch = axios.create({
-  baseURL: 'https://course-api.com',
-})
-authFetch.interceptors.request.use(
-  (request) => {
-    request.headers['Accept'] = 'application/json'
-    console.log(request)
-    return request
-  },
-  (error) => {
-    Promise.reject(error)
-  }
-)
-authFetch.interceptors.response.use(
-  (response) => {
-    console.log(response)
-    return response
-  },
-  (error) => {
-    if (error.response.status === 404) {
-      console.log('not found')
-    }
-    return Promise.reject(error)
-  }
-)
-export default authFetch
-
-`}
+          {`${promtCode.requestCode}`}
+        </SyntaxHighlighter>
+      </div>
+      <article>
+        <h2>{responseText.title}</h2>
+        <p>{responseText.info}</p>
+      </article>
+      <div className='code-container'>
+        <header className='code-topbar'>
+          <span>Code Promet </span>
+          <span>interceptor.js</span>
+        </header>
+        <SyntaxHighlighter
+          className='code-prompt'
+          language='javascript'
+          style={atomDark}
+        >
+          {`${promtCode.responseCode}`}
         </SyntaxHighlighter>
       </div>
       <div className='code-container'>
         <header className='code-topbar'>
-          <span>Code Promet </span> <span>function</span>
+          <span>Code Promet </span>
+          <span>function</span>
         </header>
         <SyntaxHighlighter
           className='code-prompt'
           language='javascript'
           style={atomDark}
         >
-          {` IntersaptorAxios() {
-  const fetchInter = async () => {
-    try {
-      const resp1 = await authFetch('/react-store-products')
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  React.useEffect(() => {
-    fetchInter()
-  }, [])
-
-`}
+          {` ${promtCode.interceptFun}`}
         </SyntaxHighlighter>
       </div>
     </div>

@@ -18,6 +18,22 @@ section {
   align-items: center;
   flex-direction: column;
 }
+article {
+  max-width: 1000px;
+  padding: 1rem;
+  margin: auto;
+}
+p {
+  max-width: 600px;
+  color: rgb(51, 46, 46);
+}
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 1340px;
+  margin: auto;
+}
 .app__cardItem {
   background-color: rgba(137, 43, 226, 0.1);
   margin: 1rem auto;
@@ -36,12 +52,12 @@ section {
   height: 80px;
   border-radius: 50%;
   border: 1px solid blueviolet;
+  overflow: hidden;
 }
 .img-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  overflow: hidden;
 }
 .app__cardItem h3,
 h4 {
