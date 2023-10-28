@@ -5,9 +5,219 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: wheat;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.app__cardItem {
+  background-color: rgba(137, 43, 226, 0.1);
+  margin: 1rem auto;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0px 6px 12px 2px rgba(153, 79, 226, 0.256);
+  text-transform: capitalize;
+  padding: 1rem 0;
+}
+.img-container {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid blueviolet;
+}
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+.app__cardItem h3,
+h4 {
+  margin: 0;
+  color: rgb(53, 49, 49);
+  text-transform: capitalize;
+}
+h1 {
+  text-align: center;
+  color: blueviolet;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 1rem;
+  border-bottom: 6px solid blueviolet;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.nav-center {
+  width: 1040px;
+  max-width: 1160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  justify-content: flex-start;
+  color: blueviolet;
+  font-weight: 600;
+  font-family: fantasy;
+  font-size: 24px;
+  letter-spacing: 2px;
+  padding: 0 0.75rem;
+}
+.spacial {
+  color: rgb(139, 132, 132);
+  letter-spacing: 4px;
+}
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+.link {
+  text-decoration: none;
+}
+li {
+  margin-left: 0.75rem;
+  color: blueviolet;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-bottom: 1px solid blueviolet;
+  transition: 0.3s ease;
+}
+li:hover {
+  color: rgba(137, 43, 226, 0.742);
+  border-bottom: none;
+}
+.app__dadJokes-container {
+  text-align: center;
+  width: 500px;
+  box-shadow: 0px 6px 12px 2px rgba(153, 79, 226, 0.256);
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: rgba(137, 43, 226, 0.1);
+}
+h2 {
+  color: blueviolet;
+  letter-spacing: 2px;
+}
+.app__dadJokes-container h1 {
+  color: blueviolet;
+  text-transform: uppercase;
+}
+.btn {
+  background-color: blueviolet;
+  border: none;
+  font-size: 14px;
+  padding: 0.5rem 1.5rem;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  color: rgb(204, 186, 220);
+  font-weight: 600;
+  margin-top: 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.app__dadJokes-container p {
+  color: rgb(51, 46, 46);
+  font-weight: 600;
+}
+.app__dadJokes-container p::before {
+  content: '"';
+}
+.app__dadJokes-container p::after {
+  content: '"';
+}
+form {
+  width: 400px;
+  background-color: rgba(137, 43, 226, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 6px 12px 2px rgba(153, 79, 226, 0.256);
+}
+.input-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  font-weight: 500;
+  color: blueviolet;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+input {
+  width: 250px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  padding: 0 1rem;
+}
+input:focus {
+  outline: 1px solid blueviolet;
+}
+form h1 {
+  color: blueviolet;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.code-container {
+  /* padding: 1rem; */
+  max-width: 1000px;
+  margin: auto;
+}
+.code-container header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(31, 31, 39);
+  margin: -10px 0;
+  padding: 1rem;
+  color: #9aff60;
+  border-radius: 4px;
+  margin-top: 2rem;
+}
+.code-container header span:first-child {
+  color: #96cbda;
+}
+@media screen and (max-width: 900px) {
+  nav {
+    justify-items: flex-start;
+  }
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+
+    align-items: flex-start;
+  }
+  li {
+    margin-top: 0.75rem;
+    width: 100%;
+  }
+  .nav-center {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
